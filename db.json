@@ -1,0 +1,208 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Demo User",
+      "email": "demo@bookfinder.com",
+      "password": "demo123",
+      "createdAt": "2025-11-30T10:00:00.000Z"
+    },
+    {
+      "name": "A",
+      "email": "a@gmail.com",
+      "password": "a@1234",
+      "createdAt": "2025-11-30T10:43:31.974Z",
+      "id": "n3NqLe4"
+    }
+  ],
+  "books": [
+    {
+      "id": "f513",
+      "googleId": "abYKXvCwEToC",
+      "title": "Harry Potter",
+      "authors": [
+        "S. Gunelius"
+      ],
+      "thumbnail": "http://books.google.com/books/content?id=abYKXvCwEToC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "The Harry Potter books are the bestselling books of all time. In this fascinating study, Susan Gunelius analyzes every aspect of the brand phenomenon that is Harry Potter. Delving into price wars, box office revenue, and brand values, amongst other things, this is the story of the most incredible brand success there has ever been.",
+      "userEmail": "m@gmail.com",
+      "status": "finished",
+      "favourite": true,
+      "notes": "complete",
+      "addedAt": "2025-11-30T00:59:25.194Z"
+    },
+    {
+      "id": "b4d6",
+      "googleId": "KFHnxOihXIkC",
+      "title": "Geetanjali",
+      "authors": [
+        "Ravindranath Thakur"
+      ],
+      "thumbnail": "http://books.google.com/books/content?id=KFHnxOihXIkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "No description available.",
+      "userEmail": "m@gmail.com",
+      "status": "finished",
+      "favourite": true,
+      "notes": "",
+      "addedAt": "2025-11-30T01:05:07.886Z"
+    },
+    {
+      "id": "174e",
+      "googleId": "vABUDDf2kSsC",
+      "title": "Game Addiction",
+      "authors": [
+        "Neils Clark",
+        "P. Shavaun Scott"
+      ],
+      "thumbnail": "http://books.google.com/books/content?id=vABUDDf2kSsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "An eleven-year-old boy strangled an elderly woman for the equivalent of five dollars in 2007, then buried her body under a thin layer of sand. He told the police that he needed the money to play online videogames. Just a month later, an eight-year-old Norwegian boy saved his younger sister's life by threatening an attacking moose and then feigning death when the moose attacked him--skills he said he learned while playing World of Warcraft. As these two instances show, videogames affect the minds, bodies, and lives of millions of gamers, negatively and positively. This book approaches videogame addiction from a cross-disciplinary perspective, bridging the divide between liberal arts academics and clinical researchers. The topic of addiction is examined neutrally, using accepted research in neuroscience, media studies, and developmental psychology.",
+      "userEmail": "m@gmail.com",
+      "status": "reading",
+      "favourite": false,
+      "notes": "",
+      "addedAt": "2025-11-30T01:06:30.825Z"
+    },
+    {
+      "id": "6f95",
+      "googleId": "abYKXvCwEToC",
+      "title": "Harry Potter",
+      "authors": [
+        "S. Gunelius"
+      ],
+      "thumbnail": "https://books.google.com/books/content?id=abYKXvCwEToC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "The Harry Potter books are the bestselling books of all time. In this fascinating study, Susan Gunelius analyzes every aspect of the brand phenomenon that is Harry Potter. Delving into price wars, box office revenue, and brand values, amongst other things, this is the story of the most incredible brand success there has ever been.",
+      "publishedDate": "2008-06-03",
+      "pageCount": 214,
+      "userEmail": "m@gmail.com",
+      "status": "to-read",
+      "favourite": false,
+      "notes": "",
+      "addedAt": "2025-11-30T01:25:21.060Z"
+    },
+    {
+      "id": "2945",
+      "googleId": "U69Hzz2jLPUC",
+      "title": "JavaScript, A Beginner's Guide, Third Edition",
+      "authors": [
+        "John Pollock"
+      ],
+      "thumbnail": "https://books.google.com/books/content?id=U69Hzz2jLPUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "Essential Skills--Made Easy! Create dynamic Web pages complete with special effects using today's leading Web development language. JavaScript: A Beginner's Guide, Third Edition gives you step-by-step coverage of the fundamentals, including variables, functions, operators, event handlers, objects, arrays, strings, forms, and frames. You'll also learn about more advanced techniques, including debugging and security. This hands-on guide explains how JavaScript works with XHTML Transitional and covers the new features available in JavaScript. Get started using JavaScript right away with help from this fast-paced tutorial. Designed for Easy Learning: Key Skills & Concepts--Chapter-opening lists of specific skills covered in the chapter Ask the Expert--Q & A sections filled with bonus information and helpful tips Try This--Hands-on exercises that show you how to apply your skills Notes--Extra information related to the topic being covered Tips--Helpful reminders or alternate ways of doing things Self Tests--End-of-chapter reviews to test your knowledge Annotated syntax--Example code with commentary that describes the programming techniques being illustrated",
+      "publishedDate": "2009-11-19",
+      "pageCount": 512,
+      "userEmail": "m@gmail.com",
+      "status": "to-read",
+      "favourite": false,
+      "notes": "",
+      "addedAt": "2025-11-30T01:26:48.623Z"
+    },
+    {
+      "id": "ccf8",
+      "googleId": "JKuTEAAAQBAJ",
+      "title": "Science, Society, and the Search for Life in the Universe",
+      "authors": [
+        "Bruce M. Jakosky"
+      ],
+      "thumbnail": "https://books.google.com/books/content?id=JKuTEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "Are we alone in the universe? As humans, are we unique or are we part of a greater cosmic existence? What is lifeÕs future on Earth and beyond? How does life begin and develop? These are age-old questions that have inspired wonder and controversy ever since the first people looked up into the sky. With todayÕs technology, however, we are closer than ever to finding the answers. Astrobiology is the relatively new, but fast growing scientific discipline that involves trying to understand the origin, evolution, and distribution of life within the universe. It is also one of the few scientific disciplines that attracts the publicÕs intense curiosity and attention. This interest stems largely from the deep personal meaning that the possible existence of extraterrestrial life has for so many. Whether this meaning relates to addressing the ÒBig QuestionsÓ of our existence, the possibility of encountering life on other planets, or the potential impact on our understanding of religion, there is no doubt that the public is firmly vested in finding answers. In this broadly accessible introduction to the field, Bruce Jakosky looks at the search for life in the universe not only from a scientific perspective, but also from a distinctly social one. In lucid and engaging prose, he addresses topics including the contradiction between the publicÕs fascination and the meager dialogue that exists between those within the scientific community and those outside of it, and what has become some of the most impassioned political wrangling ever seen in government science funding.",
+      "publishedDate": "2006-10-26",
+      "pageCount": 162,
+      "userEmail": "m@gmail.com",
+      "status": "to-read",
+      "favourite": false,
+      "notes": "",
+      "addedAt": "2025-11-30T01:31:22.667Z"
+    },
+    {
+      "googleId": "WPC1BAAAQBAJ",
+      "title": "101 Amazing Harry Potter Facts",
+      "authors": [
+        "Jack Goldstein",
+        "Frankie Taylor"
+      ],
+      "thumbnail": "http://localhost:5000/proxy-image?url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fcontent%3Fid%3DWPC1BAAAQBAJ%26printsec%3Dfrontcover%26img%3D1%26zoom%3D1%26edge%3Dcurl%26source%3Dgbs_api",
+      "originalThumbnail": "http://books.google.com/books/content?id=WPC1BAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "Through JK Rowling's series of Harry Potter books and the eight films, we have been introduced to a fantastic and magical world that I'm sure many of us would like to visit. But what is the story behind what we see and read, and what are some little-known facts about the books, the films, the actors and the characters? This book contains 101 amazing facts which you most likely didn’t know!",
+      "publishedDate": "2012-10-16",
+      "pageCount": 25,
+      "userEmail": "m@gmail.com",
+      "status": "to-read",
+      "favourite": false,
+      "notes": "",
+      "addedAt": "2025-11-30T01:34:10.334Z",
+      "id": "UroKNvn"
+    },
+    {
+      "googleId": "z7D2DwAAQBAJ",
+      "title": "The Modern JavaScript Basics Tutorial",
+      "authors": [
+        "Be Sure Academy"
+      ],
+      "thumbnail": "http://localhost:5000/proxy-image?url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fcontent%3Fid%3Dz7D2DwAAQBAJ%26printsec%3Dfrontcover%26img%3D1%26zoom%3D1%26edge%3Dcurl%26source%3Dgbs_api",
+      "originalThumbnail": "http://books.google.com/books/content?id=z7D2DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "JavaScript is the world's most popular programming language. JavaScript is the programming language of the Web. JavaScript is easy to learn. Here we learn JavaScript, starting from scratch and go on to advanced concepts like OOP. You will learn by examples In this book, learning speed is your choice. Everything is up to you. If you are struggling, take a break, or re-read the material. JavaScript is already running in your browser on your computer, on your tablet, and on your smart-phone. JavaScript is free to use for everyone. Start your coding today!",
+      "publishedDate": "2025-01-08",
+      "pageCount": 78,
+      "userEmail": "j@gmail.com",
+      "status": "to-read",
+      "favourite": false,
+      "notes": "",
+      "addedAt": "2025-11-30T01:38:39.415Z",
+      "id": "FdD8j1a"
+    },
+    {
+      "googleId": "Cr0iAwAAQBAJ",
+      "title": "The Oxford Handbook of Clinical Psychology",
+      "authors": [
+        "David H. Barlow"
+      ],
+      "thumbnail": "http://localhost:5000/proxy-image?url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fcontent%3Fid%3DCr0iAwAAQBAJ%26printsec%3Dfrontcover%26img%3D1%26zoom%3D1%26edge%3Dcurl%26source%3Dgbs_api",
+      "originalThumbnail": "http://books.google.com/books/content?id=Cr0iAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "The Oxford Handbook of Clinical Psychology synthesizes a half-century of clinical psychology literature in one extraordinary volume. Comprising chapters from the foremost scholars in the field, this handbook provides even and authoritative coverage of the research, practice, and policy factors that combine to form today's clinical psychology landscape. It is a landmark publication that is sure to serve as the field's benchmark reference publication for years to come.",
+      "publishedDate": "2014",
+      "pageCount": 977,
+      "userEmail": "k@gmail.com",
+      "status": "to-read",
+      "favourite": false,
+      "notes": "",
+      "addedAt": "2025-11-30T06:04:16.174Z",
+      "id": "tkxLg-t"
+    },
+    {
+      "googleId": "Cr0iAwAAQBAJ",
+      "title": "The Oxford Handbook of Clinical Psychology",
+      "authors": [
+        "David H. Barlow"
+      ],
+      "thumbnail": "http://localhost:5000/proxy-image?url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fcontent%3Fid%3DCr0iAwAAQBAJ%26printsec%3Dfrontcover%26img%3D1%26zoom%3D1%26edge%3Dcurl%26source%3Dgbs_api",
+      "originalThumbnail": "http://books.google.com/books/content?id=Cr0iAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "The Oxford Handbook of Clinical Psychology synthesizes a half-century of clinical psychology literature in one extraordinary volume. Comprising chapters from the foremost scholars in the field, this handbook provides even and authoritative coverage of the research, practice, and policy factors that combine to form today's clinical psychology landscape. It is a landmark publication that is sure to serve as the field's benchmark reference publication for years to come.",
+      "publishedDate": "2014",
+      "pageCount": 977,
+      "userEmail": "k@gmail.com",
+      "status": "to-read",
+      "favourite": false,
+      "notes": "",
+      "addedAt": "2025-11-30T06:04:17.598Z",
+      "id": "_6fl2ee"
+    },
+    {
+      "googleId": "dRn0AAAAQBAJ",
+      "title": "Something from Mercury",
+      "authors": [
+        "John Russell Fearn"
+      ],
+      "thumbnail": "http://localhost:5000/proxy-image?url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fcontent%3Fid%3DdRn0AAAAQBAJ%26printsec%3Dfrontcover%26img%3D1%26zoom%3D1%26edge%3Dcurl%26source%3Dgbs_api",
+      "originalThumbnail": "http://books.google.com/books/content?id=dRn0AAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "It came originally from the merciless, frost-bound wilderness of the night side of Mercury, the hellish planet nearest to the Sun. But when space explorer Harry Dagenham brings a long-dead, petrified snake--or something--back to Earth from Mercury, he discovers--quite suddenly--that the rock-hard creature is not quite so inert as it first appears! Here are six extraordinary stories from the golden age of the pulps: \"Something from Mercury,\" \"The World That Dissolved,\" \"Pre-Natal,\" \"Beyond Zero,\" \"Across the Ages,\" and \"Twilight Planet.\" Great science-fiction adventure from the pulp magazine era!",
+      "publishedDate": "2013-07-02",
+      "pageCount": 157,
+      "userEmail": "a@gmail.com",
+      "status": "to-read",
+      "favourite": false,
+      "notes": "",
+      "addedAt": "2025-11-30T10:43:44.595Z",
+      "id": "jSmiQtT"
+    }
+  ]
+}
