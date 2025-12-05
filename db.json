@@ -13,6 +13,27 @@
       "password": "a@1234",
       "createdAt": "2025-11-30T10:43:31.974Z",
       "id": "n3NqLe4"
+    },
+    {
+      "name": "james",
+      "email": "j@gmail.com",
+      "password": "j@12345",
+      "createdAt": "2025-11-30T12:25:25.726Z",
+      "id": "GjWKckm"
+    },
+    {
+      "name": "m",
+      "email": "m@gmail.com",
+      "password": "m@12345",
+      "createdAt": "2025-11-30T18:03:32.843Z",
+      "id": "dG5nTfU"
+    },
+    {
+      "name": "jack",
+      "email": "jack@gmail.com",
+      "password": "j@1234",
+      "createdAt": "2025-12-05T12:13:11.235Z",
+      "id": "WGMq_p4"
     }
   ],
   "books": [
@@ -133,24 +154,6 @@
       "id": "UroKNvn"
     },
     {
-      "googleId": "z7D2DwAAQBAJ",
-      "title": "The Modern JavaScript Basics Tutorial",
-      "authors": [
-        "Be Sure Academy"
-      ],
-      "thumbnail": "http://localhost:5000/proxy-image?url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fcontent%3Fid%3Dz7D2DwAAQBAJ%26printsec%3Dfrontcover%26img%3D1%26zoom%3D1%26edge%3Dcurl%26source%3Dgbs_api",
-      "originalThumbnail": "http://books.google.com/books/content?id=z7D2DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "description": "JavaScript is the world's most popular programming language. JavaScript is the programming language of the Web. JavaScript is easy to learn. Here we learn JavaScript, starting from scratch and go on to advanced concepts like OOP. You will learn by examples In this book, learning speed is your choice. Everything is up to you. If you are struggling, take a break, or re-read the material. JavaScript is already running in your browser on your computer, on your tablet, and on your smart-phone. JavaScript is free to use for everyone. Start your coding today!",
-      "publishedDate": "2025-01-08",
-      "pageCount": 78,
-      "userEmail": "j@gmail.com",
-      "status": "to-read",
-      "favourite": false,
-      "notes": "",
-      "addedAt": "2025-11-30T01:38:39.415Z",
-      "id": "FdD8j1a"
-    },
-    {
       "googleId": "Cr0iAwAAQBAJ",
       "title": "The Oxford Handbook of Clinical Psychology",
       "authors": [
@@ -203,6 +206,60 @@
       "notes": "",
       "addedAt": "2025-11-30T10:43:44.595Z",
       "id": "jSmiQtT"
+    },
+    {
+      "googleId": "r6UyEAAAQBAJ",
+      "title": "Harry Potter Box Set: the Complete Collection (Children's Paperback)",
+      "authors": [
+        "J. K. Rowling"
+      ],
+      "thumbnail": "http://localhost:5000/proxy-image?url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fcontent%3Fid%3Dr6UyEAAAQBAJ%26printsec%3Dfrontcover%26img%3D1%26zoom%3D1%26source%3Dgbs_api",
+      "originalThumbnail": "http://books.google.com/books/content?id=r6UyEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "A beautiful boxed set containing all seven Harry Potter novels in paperback. These new editions of the classic and internationally bestselling, multi-award-winning series feature instantly pick-up-able new jackets by Jonny Duddle, with huge child appeal, to bring Harry Potter to the next generation of readers. It's time to PASS THE MAGIC ON .",
+      "publishedDate": "2014-09-24",
+      "pageCount": 345,
+      "userEmail": "j@gmail.com",
+      "status": "to-read",
+      "favourite": false,
+      "notes": "",
+      "addedAt": "2025-11-30T12:25:32.152Z",
+      "id": "hY1gkvH"
+    },
+    {
+      "googleId": "z7D2DwAAQBAJ",
+      "title": "The Modern JavaScript Basics Tutorial",
+      "authors": [
+        "Be Sure Academy"
+      ],
+      "thumbnail": "http://localhost:5000/proxy-image?url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fcontent%3Fid%3Dz7D2DwAAQBAJ%26printsec%3Dfrontcover%26img%3D1%26zoom%3D1%26edge%3Dcurl%26source%3Dgbs_api",
+      "originalThumbnail": "http://books.google.com/books/content?id=z7D2DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "JavaScript is the world's most popular programming language. JavaScript is the programming language of the Web. JavaScript is easy to learn. Here we learn JavaScript, starting from scratch and go on to advanced concepts like OOP. You will learn by examples In this book, learning speed is your choice. Everything is up to you. If you are struggling, take a break, or re-read the material. JavaScript is already running in your browser on your computer, on your tablet, and on your smart-phone. JavaScript is free to use for everyone. Start your coding today!",
+      "publishedDate": "2025-01-08",
+      "pageCount": 78,
+      "userEmail": "j@gmail.com",
+      "status": "to-read",
+      "favourite": true,
+      "notes": "",
+      "addedAt": "2025-11-30T12:25:43.176Z",
+      "id": "bHOSE8u"
+    },
+    {
+      "googleId": "abYKXvCwEToC",
+      "title": "Harry Potter",
+      "authors": [
+        "S. Gunelius"
+      ],
+      "thumbnail": "http://localhost:5000/proxy-image?url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fcontent%3Fid%3DabYKXvCwEToC%26printsec%3Dfrontcover%26img%3D1%26zoom%3D1%26edge%3Dcurl%26source%3Dgbs_api",
+      "originalThumbnail": "http://books.google.com/books/content?id=abYKXvCwEToC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "The Harry Potter books are the bestselling books of all time. In this fascinating study, Susan Gunelius analyzes every aspect of the brand phenomenon that is Harry Potter. Delving into price wars, box office revenue, and brand values, amongst other things, this is the story of the most incredible brand success there has ever been.",
+      "publishedDate": "2008-06-03",
+      "pageCount": 214,
+      "userEmail": "jack@gmail.com",
+      "status": "finished",
+      "favourite": false,
+      "notes": "",
+      "addedAt": "2025-12-05T12:17:12.315Z",
+      "id": "u6D0q7Q"
     }
   ]
 }
