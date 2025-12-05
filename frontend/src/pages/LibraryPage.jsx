@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Footer from '../components/Footer';
+import { API_URL } from '../config';
 
 export default function LibraryPage({ userEmail, onNotification, onStatsUpdate }) {
   const [books, setBooks] = useState([]);
@@ -14,7 +15,7 @@ export default function LibraryPage({ userEmail, onNotification, onStatsUpdate }
 
   const loadLibrary = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/books?userEmail=${encodeURIComponent(userEmail)}`);
+      const response = await fetch(`${API_URL}/books?userEmail=${encodeURIComponent(userEmail)}`);
       const data = await response.json();
       setBooks(data);
     } catch (err) {
@@ -26,7 +27,7 @@ export default function LibraryPage({ userEmail, onNotification, onStatsUpdate }
 
   const updateBook = async (id, updates) => {
     try {
-      await fetch(`http://localhost:5000/books/${id}`, {
+      await fetch(`${API_URL}/books/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updates)
@@ -47,7 +48,7 @@ export default function LibraryPage({ userEmail, onNotification, onStatsUpdate }
   const deleteBook = async (id, title) => {
     if (confirm('Remove this book from your library?')) {
       try {
-        await fetch(`http://localhost:5000/books/${id}`, { method: 'DELETE' });
+        await fetch(`${API_URL}/books/${id}`, { method: 'DELETE' });
         await loadLibrary();
         onNotification(`"${title}" removed from library`);
         if (onStatsUpdate) onStatsUpdate();

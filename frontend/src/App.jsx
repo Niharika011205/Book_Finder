@@ -7,6 +7,7 @@ import FavouritesPage from './pages/FavouritesPage';
 import ProfilePage from './pages/ProfilePage';
 import Sidebar from './components/Sidebar';
 import Notification from './components/Notification';
+import { API_URL } from './config';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -30,7 +31,7 @@ function App() {
   const loadStats = async () => {
     try {
       const normalizedEmail = user.email.toLowerCase().trim();
-      const response = await fetch(`http://localhost:5000/books?userEmail=${encodeURIComponent(normalizedEmail)}`);
+      const response = await fetch(`${API_URL}/books?userEmail=${encodeURIComponent(normalizedEmail)}`);
       const books = await response.json();
 
       const finished = books.filter(b => b.status === 'finished').length;

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_URL } from '../config';
 
 function FavouritesPage({ userEmail, onNotification, onStatsUpdate }) {
   const [books, setBooks] = useState([]);
@@ -14,7 +15,7 @@ function FavouritesPage({ userEmail, onNotification, onStatsUpdate }) {
     try {
       setLoading(true);
       const normalizedEmail = userEmail.toLowerCase().trim();
-      const response = await fetch(`http://localhost:5000/books?userEmail=${encodeURIComponent(normalizedEmail)}&favourite=true`);
+      const response = await fetch(`${API_URL}/books?userEmail=${encodeURIComponent(normalizedEmail)}&favourite=true`);
       const data = await response.json();
       setBooks(data);
     } catch (err) {
@@ -27,7 +28,7 @@ function FavouritesPage({ userEmail, onNotification, onStatsUpdate }) {
   const handleRemoveFavourite = async (bookId) => {
     try {
       const book = books.find(b => b.id === bookId);
-      await fetch(`http://localhost:5000/books/${bookId}`, {
+      await fetch(`${API_URL}/books/${bookId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ favourite: false })
@@ -48,7 +49,7 @@ function FavouritesPage({ userEmail, onNotification, onStatsUpdate }) {
 
   const handleSaveEdit = async (bookId) => {
     try {
-      await fetch(`http://localhost:5000/books/${bookId}`, {
+      await fetch(`${API_URL}/books/${bookId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editForm)
@@ -68,7 +69,7 @@ function FavouritesPage({ userEmail, onNotification, onStatsUpdate }) {
 
     try {
       const book = books.find(b => b.id === bookId);
-      await fetch(`http://localhost:5000/books/${bookId}`, { method: 'DELETE' });
+      await fetch(`${API_URL}/books/${bookId}`, { method: 'DELETE' });
       setBooks(books.filter(b => b.id !== bookId));
       onNotification(`"${book.title}" deleted from library.`);
       onStatsUpdate();

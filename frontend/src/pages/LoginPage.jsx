@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { API_URL } from '../config';
 
 export default function LoginPage({ onLoginSuccess }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -16,7 +17,7 @@ export default function LoginPage({ onLoginSuccess }) {
     const normalizedEmail = email.toLowerCase().trim();
 
     try {
-      const response = await fetch(`http://localhost:5000/users?email=${encodeURIComponent(normalizedEmail)}`);
+      const response = await fetch(`${API_URL}/users?email=${encodeURIComponent(normalizedEmail)}`);
       const users = await response.json();
 
       if (isLogin) {
@@ -44,7 +45,7 @@ export default function LoginPage({ onLoginSuccess }) {
           createdAt: new Date().toISOString()
         };
 
-        const createResponse = await fetch('http://localhost:5000/users', {
+        const createResponse = await fetch(`${API_URL}/users`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(newUser)

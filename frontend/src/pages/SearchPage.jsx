@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Footer from '../components/Footer';
+import { API_URL } from '../config';
 
 export default function SearchPage({ userEmail, onNotification, onStatsUpdate }) {
   const [query, setQuery] = useState('');
@@ -36,7 +37,7 @@ export default function SearchPage({ userEmail, onNotification, onStatsUpdate })
           }
 
           if (originalUrl) {
-            thumbnail = `http://localhost:5000/proxy-image?url=${encodeURIComponent(originalUrl)}`;
+            thumbnail = `${API_URL}/proxy-image?url=${encodeURIComponent(originalUrl)}`;
           }
         }
 
@@ -77,7 +78,7 @@ export default function SearchPage({ userEmail, onNotification, onStatsUpdate })
         notes: '',
         addedAt: new Date().toISOString()
       };
-      const response = await fetch('http://localhost:5000/books', {
+      const response = await fetch(`${API_URL}/books`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newBook)
