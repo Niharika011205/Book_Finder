@@ -7,9 +7,10 @@ export default function Notification({ message, onClose }) {
   }, [onClose]);
 
   return (
-    <div className="fixed top-5 right-5 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg flex items-center gap-4 z-50 animate-slide-in-right min-w-[250px]">
-      <span>✓ {message}</span>
-      <button onClick={onClose} className="text-2xl leading-none hover:opacity-75">×</button>
+    <div className="fixed top-24 right-8 glass border-2 border-emerald-500/50 text-white px-6 py-4 rounded-2xl shadow-2xl shadow-emerald-500/50 flex items-center gap-4 z-[100] animate-slide-in-right min-w-[300px] neon-glow">
+      <span className="text-emerald-400 text-2xl">✓</span>
+      <span className="flex-1 font-medium">{message}</span>
+      <button onClick={onClose} className="text-2xl leading-none hover:text-emerald-400 transition-colors">×</button>
     </div>
   );
 }

@@ -54,7 +54,7 @@ export default function LoginPage({ onLoginSuccess }) {
         const savedUser = await createResponse.json();
         const user = { name: savedUser.name, email: savedUser.email };
         localStorage.setItem('user', JSON.stringify(user));
-        onLoginSuccess('Registration successful! Welcome to Book Finder.');
+        onLoginSuccess('Registration successful! Welcome to BookFinder.');
       }
     } catch (err) {
       setError('Something went wrong. Please try again.');
@@ -64,62 +64,108 @@ export default function LoginPage({ onLoginSuccess }) {
   };
 
   return (
-    <div className="flex h-screen overflow-hidden">
-      <div className="flex-1 relative bg-slate-800">
-        <img
-          src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80"
-          alt="Library"
-          className="w-full h-full object-cover opacity-70"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
-          <h1 className="text-5xl font-bold mb-4 drop-shadow-lg">📚 Book Finder</h1>
-          <p className="text-xl drop-shadow-md">Discover, organize, and manage your personal library</p>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-6">
+      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-8 items-center">
+        {/* Left Side - Branding */}
+        <div className="text-white space-y-6">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl">
+              <span className="text-4xl">📚</span>
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                BookFinder
+              </h1>
+              <p className="text-gray-400">Your Personal Library</p>
+            </div>
+          </div>
 
-      <div className="flex-1 flex items-center justify-center bg-white p-8">
-        <div className="w-full max-w-md">
-          <h2 className="text-3xl font-bold text-slate-800 mb-2">
-            {isLogin ? 'Welcome Back' : 'Create Account'}
+          <h2 className="text-6xl font-bold leading-tight">
+            Discover, Organize & Track Your Reading Journey
           </h2>
-          <p className="text-gray-600 mb-8">
-            {isLogin ? 'Login to access your library' : 'Sign up to get started'}
+          
+          <p className="text-2xl text-gray-300">
+            Join thousands of readers managing their book collections with ease
           </p>
 
+          <div className="space-y-4 pt-6">
+            <div className="flex items-center gap-5">
+              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center">
+                <span className="text-3xl">🔎</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-xl">Search Millions of Books</h3>
+                <p className="text-gray-400 text-base">Access Google Books library instantly</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-5">
+              <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center">
+                <span className="text-3xl">📚</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-xl">Organize Your Library</h3>
+                <p className="text-gray-400 text-base">Track reading status and add notes</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-5">
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
+                <span className="text-3xl">💖</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-xl">Save Your Favorites</h3>
+                <p className="text-gray-400 text-base">Create your personal collection</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side - Form */}
+        <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+          <div className="text-center mb-10">
+            <h3 className="text-4xl font-bold text-white mb-3">
+              {isLogin ? 'Welcome Back!' : 'Get Started'}
+            </h3>
+            <p className="text-lg text-gray-300">
+              {isLogin ? 'Login to continue your reading journey' : 'Create your account in seconds'}
+            </p>
+          </div>
+
           {error && (
-            <div className="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 rounded mb-6">
-              <p className="font-semibold">⚠️ {error}</p>
+            <div className="bg-red-500/20 border border-red-500 text-red-200 p-5 rounded-xl mb-8 backdrop-blur-sm">
+              <p className="font-semibold text-lg">⚠️ {error}</p>
             </div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {!isLogin && (
               <div>
-                <label className="block text-sm font-semibold text-slate-800 mb-2">Full Name</label>
+                <label className="block text-base font-semibold text-gray-200 mb-3">Full Name</label>
                 <input
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Enter your name"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition"
+                  className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-xl text-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm"
                 />
               </div>
             )}
 
             <div>
-              <label className="block text-sm font-semibold text-slate-800 mb-2">Email Address</label>
+              <label className="block text-base font-semibold text-gray-200 mb-3">Email Address</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
+                placeholder="your.email@example.com"
                 required
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition"
+                className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-xl text-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-slate-800 mb-2">Password</label>
+              <label className="block text-base font-semibold text-gray-200 mb-3">Password</label>
               <input
                 type="password"
                 value={password}
@@ -127,31 +173,46 @@ export default function LoginPage({ onLoginSuccess }) {
                 placeholder="Enter your password"
                 required
                 minLength="6"
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition"
+                className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-xl text-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 text-white font-semibold py-3 rounded-lg transition duration-300"
+              className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 disabled:opacity-50 text-white font-bold text-lg py-5 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
-              {loading ? 'Please wait...' : (isLogin ? 'Login' : 'Sign Up')}
+              {loading ? (
+                <span className="flex items-center justify-center gap-2">
+                  <span className="animate-spin text-xl">⏳</span> Please wait...
+                </span>
+              ) : (
+                <span className="text-xl">{isLogin ? '🔐 Login' : '✨ Create Account'}</span>
+              )}
             </button>
           </form>
 
-          <p className="text-center mt-6 text-gray-600">
-            {isLogin ? "Don't have an account? " : "Already have an account? "}
-            <span
-              onClick={() => {
-                setIsLogin(!isLogin);
-                setError('');
-              }}
-              className="text-blue-500 font-semibold cursor-pointer hover:underline"
-            >
-              {isLogin ? 'Sign Up' : 'Login'}
-            </span>
-          </p>
+          <div className="mt-8 text-center">
+            <p className="text-lg text-gray-300">
+              {isLogin ? "Don't have an account? " : "Already have an account? "}
+              <button
+                onClick={() => {
+                  setIsLogin(!isLogin);
+                  setError('');
+                }}
+                className="text-purple-400 font-bold text-lg hover:text-purple-300 underline"
+              >
+                {isLogin ? 'Sign Up' : 'Login'}
+              </button>
+            </p>
+          </div>
+
+          {/* Demo Account */}
+          <div className="mt-8 p-5 bg-blue-500/20 border border-blue-500/30 rounded-xl backdrop-blur-sm">
+            <p className="text-base text-blue-200 text-center">
+              🎯 <strong>Demo Account:</strong> demo@bookfinder.com / demo123
+            </p>
+          </div>
         </div>
       </div>
     </div>

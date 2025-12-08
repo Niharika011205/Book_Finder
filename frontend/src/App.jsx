@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
+import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
 import LibraryPage from './pages/LibraryPage';
 import FavouritesPage from './pages/FavouritesPage';
 import ProfilePage from './pages/ProfilePage';
-import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Notification from './components/Notification';
 import { API_URL } from './config';
+import { useTheme } from './context/ThemeContext';
 
 function App() {
+  const { isDark } = useTheme();
   const [user, setUser] = useState(null);
   const [notification, setNotification] = useState('');
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -76,23 +80,21 @@ function App() {
         )}
 
         {user ? (
-          <div className="flex h-screen">
-            <Sidebar
-              user={user}
-              stats={stats}
-              sidebarOpen={sidebarOpen}
-              setSidebarOpen={setSidebarOpen}
-              onLogout={handleLogout}
-            />
-
-            <div className="flex-1 overflow-y-auto">
-              <Routes>
-                <Route path="/" element={<SearchPage userEmail={user.email} onNotification={setNotification} onStatsUpdate={loadStats} />} />
-                <Route path="/library" element={<LibraryPage userEmail={user.email} onNotification={setNotification} onStatsUpdate={loadStats} />} />
-                <Route path="/favourites" element={<FavouritesPage userEmail={user.email} onNotification={setNotification} onStatsUpdate={loadStats} />} />
-                <Route path="/profile" element={<ProfilePage userEmail={user.email} onNotification={setNotification} onProfileUpdate={handleProfileUpdate} />} />
-                <Route path="/login" element={<Navigate to="/" />} />
-              </Routes>
+          <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-[#0d0d0d]' : 'bg-gray-50'}`}>
+            <Navbar user={user} onLogout={handleLogout} />
+            
+            <div className="w-full">
+              <div className="px-8 py-8">
+                <Routes>
+                  <Route path="/" element={<HomePage userEmail={user.email} stats={stats} onNotification={setNotification} onStatsUpdate={loadStats} />} />
+                  <Route path="/search" element={<SearchPage userEmail={user.email} onNotification={setNotification} onStatsUpdate={loadStats} stats={stats} />} />
+                  <Route path="/library" element={<LibraryPage userEmail={user.email} onNotification={setNotification} onStatsUpdate={loadStats} stats={stats} />} />
+                  <Route path="/favourites" element={<FavouritesPage userEmail={user.email} onNotification={setNotification} onStatsUpdate={loadStats} />} />
+                  <Route path="/profile" element={<ProfilePage userEmail={user.email} onNotification={setNotification} onProfileUpdate={handleProfileUpdate} />} />
+                  <Route path="/login" element={<Navigate to="/" />} />
+                </Routes>
+              </div>
+              <Footer />
             </div>
           </div>
         ) : (

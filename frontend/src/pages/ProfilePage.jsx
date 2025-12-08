@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react';
 import { API_URL } from '../config';
+import { useTheme } from '../context/ThemeContext';
 
 function ProfilePage({ userEmail, onNotification, onProfileUpdate }) {
+    const { isDark } = useTheme();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [editing, setEditing] = useState(false);
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        password: ''
-    });
+    const [formData, setFormData] = useState({ name: '', email: '', password: '' });
     const [confirmPassword, setConfirmPassword] = useState('');
 
     useEffect(() => {
@@ -26,11 +24,7 @@ function ProfilePage({ userEmail, onNotification, onProfileUpdate }) {
             if (users.length > 0) {
                 const userData = users[0];
                 setUser(userData);
-                setFormData({
-                    name: userData.name,
-                    email: userData.email,
-                    password: ''
-                });
+                setFormData({ name: userData.name, email: userData.email, password: '' });
             }
         } catch (err) {
             onNotification('Error loading profile.');
@@ -78,7 +72,7 @@ function ProfilePage({ userEmail, onNotification, onProfileUpdate }) {
             setEditing(false);
             setFormData({ ...formData, password: '' });
             setConfirmPassword('');
-            onNotification('Profile updated successfully.');
+            onNotification('Profile updated successfully!');
             onProfileUpdate(updatedUser);
         } catch (err) {
             onNotification('Error updating profile.');
@@ -87,127 +81,133 @@ function ProfilePage({ userEmail, onNotification, onProfileUpdate }) {
 
     if (loading) {
         return (
-            <div className="flex items-center justify-center h-screen">
-                <div className="text-xl text-gray-600">Loading profile...</div>
+            <div className={`text-center py-20 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                <div className="inline-block animate-spin text-6xl mb-4">⚙️</div>
+                <p className="text-xl text-gray-400">Loading profile...</p>
             </div>
         );
     }
 
     return (
-        <div className="p-8">
-            <div className="max-w-2xl mx-auto">
-                <div className="mb-8">
-                    <h1 className="text-3xl font-bold text-gray-900 mb-2">My Profile</h1>
-                    <p className="text-gray-600">Manage your account information</p>
+        <div className={`max-w-2xl mx-auto ${isDark ? 'text-white' : 'text-gray-900'}`}>
+            <div className="mb-8">
+                <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    ⚙️ My Profile
+                </h1>
+                <p className="text-gray-400">Manage your account settings</p>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+                {/* Profile Avatar */}
+                <div className="flex items-center gap-6 mb-8 pb-8 border-b border-white/10">
+                    <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-5xl shadow-xl">
+                        👤
+                    </div>
+                    <div>
+                        <h2 className="text-2xl font-bold">{user.name}</h2>
+                        <p className="text-gray-400">{user.email}</p>
+                        <p className="text-sm text-gray-500 mt-1">
+                            Member since {new Date(user.createdAt).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                            })}
+                        </p>
+                    </div>
                 </div>
 
-                <div className="bg-white rounded-lg shadow-md p-6">
-                    <div className="space-y-6">
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                            {editing ? (
-                                <input
-                                    type="text"
-                                    value={formData.name}
-                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                    placeholder="Your name"
-                                />
-                            ) : (
-                                <p className="text-gray-900 text-lg">{user.name}</p>
-                            )}
-                        </div>
-
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                            {editing ? (
-                                <input
-                                    type="email"
-                                    value={formData.email}
-                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                    placeholder="your.email@example.com"
-                                />
-                            ) : (
-                                <p className="text-gray-900 text-lg">{user.email}</p>
-                            )}
-                        </div>
-
-                        {editing && (
-                            <>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        New Password (leave blank to keep current)
-                                    </label>
-                                    <input
-                                        type="password"
-                                        value={formData.password}
-                                        onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                        placeholder="Enter new password"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        Confirm New Password
-                                    </label>
-                                    <input
-                                        type="password"
-                                        value={confirmPassword}
-                                        onChange={(e) => setConfirmPassword(e.target.value)}
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                        placeholder="Confirm new password"
-                                    />
-                                </div>
-                            </>
-                        )}
-
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">Member Since</label>
-                            <p className="text-gray-900">
-                                {new Date(user.createdAt).toLocaleDateString('en-US', {
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric'
-                                })}
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="mt-8 flex gap-4">
+                {/* Form */}
+                <div className="space-y-6">
+                    <div>
+                        <label className="block text-sm font-semibold text-gray-300 mb-2">Name</label>
                         {editing ? (
-                            <>
-                                <button
-                                    onClick={handleSave}
-                                    className="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors"
-                                >
-                                    Save Changes
-                                </button>
-                                <button
-                                    onClick={() => {
-                                        setEditing(false);
-                                        setFormData({
-                                            name: user.name,
-                                            email: user.email,
-                                            password: ''
-                                        });
-                                        setConfirmPassword('');
-                                    }}
-                                    className="flex-1 bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors"
-                                >
-                                    Cancel
-                                </button>
-                            </>
+                            <input
+                                type="text"
+                                value={formData.name}
+                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                placeholder="Your name"
+                            />
                         ) : (
-                            <button
-                                onClick={() => setEditing(true)}
-                                className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
-                            >
-                                Edit Profile
-                            </button>
+                            <p className="text-xl font-medium">{user.name}</p>
                         )}
                     </div>
+
+                    <div>
+                        <label className="block text-sm font-semibold text-gray-300 mb-2">Email</label>
+                        {editing ? (
+                            <input
+                                type="email"
+                                value={formData.email}
+                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                placeholder="your.email@example.com"
+                            />
+                        ) : (
+                            <p className="text-xl font-medium">{user.email}</p>
+                        )}
+                    </div>
+
+                    {editing && (
+                        <>
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-300 mb-2">
+                                    New Password (leave blank to keep current)
+                                </label>
+                                <input
+                                    type="password"
+                                    value={formData.password}
+                                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                    placeholder="Enter new password"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-300 mb-2">
+                                    Confirm New Password
+                                </label>
+                                <input
+                                    type="password"
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                    placeholder="Confirm new password"
+                                />
+                            </div>
+                        </>
+                    )}
+                </div>
+
+                {/* Actions */}
+                <div className="mt-8 flex gap-4">
+                    {editing ? (
+                        <>
+                            <button
+                                onClick={handleSave}
+                                className="flex-1 py-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 rounded-xl font-semibold shadow-lg transition-all"
+                            >
+                                💾 Save Changes
+                            </button>
+                            <button
+                                onClick={() => {
+                                    setEditing(false);
+                                    setFormData({ name: user.name, email: user.email, password: '' });
+                                    setConfirmPassword('');
+                                }}
+                                className="flex-1 py-3 bg-white/10 hover:bg-white/20 rounded-xl font-semibold transition-all"
+                            >
+                                Cancel
+                            </button>
+                        </>
+                    ) : (
+                        <button
+                            onClick={() => setEditing(true)}
+                            className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-xl font-semibold shadow-lg transition-all"
+                        >
+                            ✏️ Edit Profile
+                        </button>
+                    )}
                 </div>
             </div>
         </div>
