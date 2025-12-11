@@ -3,6 +3,7 @@
 A full-stack application that lets you search books from Google Books API and manage your personal library with full CRUD operations.
 
 ##### Ouput Demo Link : https://drive.google.com/file/d/1mizwQsyA-ozRrEOIcnFIcRBoY_VHIy0c/view?usp=sharing
+##### Documentation of Book Finder :https://docs.google.com/document/d/1O1LclBUgBKtUosy1Kma8REwjS1Xyok7q/edit?usp=sharing&ouid=102838296251009074324&rtpof=true&sd=true
 
 ## 🚀 Features
 
